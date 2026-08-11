@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -158,3 +159,20 @@ button:focus {
     outline: 3px solid #4f9cff;
     outline-offset: 2px;
 }
+#busca {
+    background-color: #1b1e2b;
+    border: 1px solid #2e3450;
+    border-radius: 6px;
+    padding: 8px 14px;
+    color: #e4e6eb;
+    font-size: 14px;
+    width: 200px;
+}
+
+#busca::placeholder {
+    color: #6b7280;
+}
+
+#busca:focus {
+    outline: 2px solid #4f9cff;
+    border-color: #4f9cff;
