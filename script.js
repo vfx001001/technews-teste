@@ -84,3 +84,16 @@ function ativarBotoesSalvar() {
 // Mostra todas as notícias assim que a página carrega
 mostrarNoticias(todasNoticias);
 
+// Busca por texto
+const campoBusca = document.getElementById('busca');
+
+campoBusca.addEventListener('input', function() {
+    const termo = this.value.toLowerCase().trim();
+
+    const filtradas = todasNoticias.filter(noticia =>
+        noticia.titulo.toLowerCase().includes(termo) ||
+        noticia.resumo.toLowerCase().includes(termo)
+    );
+
+    mostrarNoticias(filtradas);
+
