@@ -27,7 +27,6 @@ const todasNoticias = [
     }
 ];
 
-// Cria o HTML de cada notícia e insere na página
 function mostrarNoticias(noticias) {
     listaNoticias.innerHTML = '';
 
@@ -36,10 +35,9 @@ function mostrarNoticias(noticias) {
         artigo.dataset.categoria = noticia.categoria;
 
         artigo.innerHTML = `
-    <h2>${noticia.titulo}</h2>
-    <p>${noticia.resumo}</p>
-    <button class="btn-salvar" aria-label="Salvar notícia: ${noticia.titulo}">☆ Salvar</button>
-
+            <h2>${noticia.titulo}</h2>
+            <p>${noticia.resumo}</p>
+            <button class="btn-salvar">☆ Salvar</button>
         `;
 
         listaNoticias.appendChild(artigo);
@@ -48,7 +46,6 @@ function mostrarNoticias(noticias) {
     ativarBotoesSalvar();
 }
 
-// Filtro por categoria
 const links = document.querySelectorAll('nav a');
 
 links.forEach(link => {
@@ -69,7 +66,6 @@ links.forEach(link => {
     });
 });
 
-// Botão de salvar (precisa ser reativado toda vez que os cards são recriados)
 function ativarBotoesSalvar() {
     const botoesSalvar = document.querySelectorAll('.btn-salvar');
 
@@ -81,10 +77,6 @@ function ativarBotoesSalvar() {
     });
 }
 
-// Mostra todas as notícias assim que a página carrega
-mostrarNoticias(todasNoticias);
-
-// Busca por texto
 const campoBusca = document.getElementById('busca');
 
 campoBusca.addEventListener('input', function() {
@@ -96,4 +88,6 @@ campoBusca.addEventListener('input', function() {
     );
 
     mostrarNoticias(filtradas);
+});
 
+mostrarNoticias(todasNoticias);
