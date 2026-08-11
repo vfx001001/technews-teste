@@ -1,44 +1,23 @@
 const listaNoticias = document.getElementById('lista-noticias');
 
-const todasNoticias = [
-    {
-        id: 1,
-        categoria: "ia",
-        titulo: "Nova IA promete revolucionar programação",
-        resumo: "Ferramenta consegue gerar código completo a partir de descrições simples em texto."
-    },
-    {
-        id: 2,
-        categoria: "gadgets",
-        titulo: "Novo smartphone é lançado com bateria de longa duração",
-        resumo: "Aparelho promete até três dias de uso sem precisar recarregar."
-    },
-    {
-        id: 3,
-        categoria: "software",
-        titulo: "Atualização de sistema traz novos recursos",
-        resumo: "Nova versão foca em desempenho e segurança para os usuários."
-    },
-    {
-        id: 4,
-        categoria: "ia",
-        titulo: "Pesquisadores desenvolvem IA capaz de identificar doenças em imagens",
-        resumo: "Modelo analisa exames com alta precisão e pode agilizar diagnósticos."
-    }
-];
-
 function mostrarNoticias(noticias) {
     listaNoticias.innerHTML = '';
 
     noticias.forEach(noticia => {
         const artigo = document.createElement('article');
         artigo.dataset.categoria = noticia.categoria;
+        artigo.style.cursor = 'pointer';
 
         artigo.innerHTML = `
             <h2>${noticia.titulo}</h2>
             <p>${noticia.resumo}</p>
             <button class="btn-salvar">☆ Salvar</button>
         `;
+
+        artigo.addEventListener('click', function(evento) {
+            if (evento.target.classList.contains('btn-salvar')) return;
+            window.location.href = `artigo.html?id=${noticia.id}`;
+        });
 
         listaNoticias.appendChild(artigo);
     });
@@ -92,7 +71,6 @@ campoBusca.addEventListener('input', function() {
 
 mostrarNoticias(todasNoticias);
 
-// Modo claro/escuro
 const botaoTema = document.getElementById('toggle-tema');
 const temaSalvo = localStorage.getItem('tema');
 
