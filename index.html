@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,22 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechNews - Tecnologia em dia</title>
     <link rel="stylesheet" href="style.css">
-
-    <h1>TechNews</h1>
-    <input type="text" id="busca" placeholder="Buscar notícias..." aria-label="Buscar notícias">
-    <nav aria-label="Menu principal">
-        <a href="#" data-categoria="todos" class="ativo">Início</a>
-        <a href="#" data-categoria="ia">IA</a>
-        <a href="#" data-categoria="gadgets">Gadgets</a>
-        <a href="#" data-categoria="software">Software</a>
-    </nav>
-    
 </head>
 <body>
 
     <header>
         <h1>TechNews</h1>
-        <nav>
+        <input type="text" id="busca" placeholder="Buscar notícias..." aria-label="Buscar notícias">
+        <nav aria-label="Menu principal">
             <a href="#" data-categoria="todos" class="ativo">Início</a>
             <a href="#" data-categoria="ia">IA</a>
             <a href="#" data-categoria="gadgets">Gadgets</a>
@@ -29,8 +19,8 @@
         </nav>
     </header>
 
-    <main id="lista-noticias">
-        </main>
+    <main id="lista-noticias" aria-live="polite">
+    </main>
 
     <footer>
         <p>&copy; 2026 TechNews</p>
@@ -39,17 +29,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-<header>
-    <h1>TechNews</h1>
-    <nav aria-label="Menu principal">
-        <a href="#" data-categoria="todos" class="ativo">Início</a>
-        <a href="#" data-categoria="ia">IA</a>
-        <a href="#" data-categoria="gadgets">Gadgets</a>
-        <a href="#" data-categoria="software">Software</a>
-    </nav>
-</header>
-
-<main id="lista-noticias" aria-live="polite">
-</main>
-
-   
