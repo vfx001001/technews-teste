@@ -49,6 +49,11 @@ header h1 {
     font-size: 28px;
 }
 
+header h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
 nav a {
     color: var(--texto);
     text-decoration: none;
@@ -120,6 +125,10 @@ footer {
     border-top: 1px solid var(--border);
 }
 
+footer img {
+    margin-top: 10px;
+}
+
 .btn-salvar {
     background: none;
     border: 1px solid var(--border);
@@ -169,45 +178,40 @@ button:focus {
     border-color: var(--destaque);
 }
 
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px 20px;
-    }
-    header h1 {
-        font-size: 22px;
-        margin-bottom: 12px;
-    }
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    nav a {
-        margin-left: 0;
-        font-size: 14px;
-    }
-    main {
-        margin: 20px auto;
-        padding: 0 15px;
-    }
-    article {
-        padding: 18px;
-    }
-    article h2 {
-        font-size: 19px;
-    }
-    article p {
-        font-size: 14px;
-    }
-    #busca {
-        width: 100%;
-    }
+/* Página de detalhes do artigo */
+.voltar {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--destaque);
+    text-decoration: none;
+    font-size: 14px;
 }
 
-@media (min-width: 601px) and (max-width: 900px) {
-    main {
-        padding: 0 30px;
-    }
+.voltar:hover {
+    text-decoration: underline;
 }
+
+.artigo-imagem {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.artigo-titulo {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: var(--texto);
+}
+
+.artigo-texto {
+    color: var(--texto-secundario);
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.grafico-container {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
