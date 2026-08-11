@@ -91,3 +91,19 @@ campoBusca.addEventListener('input', function() {
 });
 
 mostrarNoticias(todasNoticias);
+
+// Modo claro/escuro
+const botaoTema = document.getElementById('toggle-tema');
+const temaSalvo = localStorage.getItem('tema');
+
+if (temaSalvo === 'claro') {
+    document.body.classList.add('claro');
+    botaoTema.textContent = '☀️';
+}
+
+botaoTema.addEventListener('click', function() {
+    document.body.classList.toggle('claro');
+    const estaClaro = document.body.classList.contains('claro');
+    botaoTema.textContent = estaClaro ? '☀️' : '🌙';
+    localStorage.setItem('tema', estaClaro ? 'claro' : 'escuro');
+});
