@@ -4,31 +4,53 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg: #0f1117;
+    --bg-card: #1b1e2b;
+    --bg-header: #161925;
+    --border: #2e3450;
+    --texto: #e4e6eb;
+    --texto-secundario: #a8adba;
+    --destaque: #4f9cff;
+}
+
+body.claro {
+    --bg: #f4f5f7;
+    --bg-card: #ffffff;
+    --bg-header: #ffffff;
+    --border: #d8dce3;
+    --texto: #1a1d29;
+    --texto-secundario: #5b6472;
+    --destaque: #2563eb;
+}
+
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #0f1117;
-    color: #e4e6eb;
+    background-color: var(--bg);
+    color: var(--texto);
     line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header {
-    background-color: #161925;
+    background-color: var(--bg-header);
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #2e3450;
+    border-bottom: 2px solid var(--border);
     flex-wrap: wrap;
     gap: 15px;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 header h1 {
-    color: #4f9cff;
+    color: var(--destaque);
     font-size: 28px;
 }
 
 nav a {
-    color: #e4e6eb;
+    color: var(--texto);
     text-decoration: none;
     margin-left: 25px;
     font-size: 15px;
@@ -36,12 +58,27 @@ nav a {
 }
 
 nav a:hover {
-    color: #4f9cff;
+    color: var(--destaque);
 }
 
 nav a.ativo {
-    color: #4f9cff;
+    color: var(--destaque);
     font-weight: bold;
+}
+
+#toggle-tema {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--texto);
+    font-size: 18px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#toggle-tema:hover {
+    border-color: var(--destaque);
 }
 
 main {
@@ -51,42 +88,42 @@ main {
 }
 
 article {
-    background-color: #1b1e2b;
-    border: 1px solid #2e3450;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 10px;
     padding: 25px;
     margin-bottom: 20px;
-    transition: transform 0.2s, border-color 0.2s;
+    transition: transform 0.2s, border-color 0.2s, background-color 0.3s;
 }
 
 article:hover {
     transform: translateY(-3px);
-    border-color: #4f9cff;
+    border-color: var(--destaque);
 }
 
 article h2 {
-    color: #ffffff;
+    color: var(--texto);
     font-size: 22px;
     margin-bottom: 10px;
 }
 
 article p {
-    color: #a8adba;
+    color: var(--texto-secundario);
     font-size: 15px;
 }
 
 footer {
     text-align: center;
     padding: 20px;
-    color: #6b7280;
+    color: var(--texto-secundario);
     font-size: 14px;
-    border-top: 1px solid #2e3450;
+    border-top: 1px solid var(--border);
 }
 
 .btn-salvar {
     background: none;
-    border: 1px solid #2e3450;
-    color: #a8adba;
+    border: 1px solid var(--border);
+    color: var(--texto-secundario);
     padding: 6px 14px;
     border-radius: 6px;
     cursor: pointer;
@@ -96,39 +133,40 @@ footer {
 }
 
 .btn-salvar:hover {
-    border-color: #4f9cff;
-    color: #4f9cff;
+    border-color: var(--destaque);
+    color: var(--destaque);
 }
 
 .btn-salvar.salvo {
-    background-color: #4f9cff;
+    background-color: var(--destaque);
     color: #ffffff;
-    border-color: #4f9cff;
+    border-color: var(--destaque);
 }
 
 a:focus,
 button:focus {
-    outline: 3px solid #4f9cff;
+    outline: 3px solid var(--destaque);
     outline-offset: 2px;
 }
 
 #busca {
-    background-color: #1b1e2b;
-    border: 1px solid #2e3450;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
     border-radius: 6px;
     padding: 8px 14px;
-    color: #e4e6eb;
+    color: var(--texto);
     font-size: 14px;
     width: 200px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 #busca::placeholder {
-    color: #6b7280;
+    color: var(--texto-secundario);
 }
 
 #busca:focus {
-    outline: 2px solid #4f9cff;
-    border-color: #4f9cff;
+    outline: 2px solid var(--destaque);
+    border-color: var(--destaque);
 }
 
 @media (max-width: 600px) {
