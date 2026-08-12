@@ -349,3 +349,56 @@ canvas {
         padding: 0 30px;
     }
 }
+.newsletter {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    padding: 25px 20px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.newsletter h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--texto);
+}
+
+.newsletter p {
+    color: var(--texto-secundario);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.newsletter form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.newsletter input[type="email"] {
+    background-color: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 10px 14px;
+    color: var(--texto);
+    font-size: 14px;
+    width: 250px;
+    max-width: 100%;
+}
+
+.newsletter button {
+    background-color: var(--destaque);
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.newsletter button:hover {
+    opacity: 0.9;
+}
